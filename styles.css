@@ -1,0 +1,73 @@
+body{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+    "header header header header header header"
+    "div . . . . ."
+    ". . form form . ."
+    "main main main main main main"
+    ;
+    background-color: lavender;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 1000px;
+    /* font-family: monospace; */
+}
+
+
+form{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "input-form input-form submit-form submit-form";
+    grid-area: form;
+    display: inline-block;
+}
+#input-form{
+    grid-area: input-form;
+}
+
+#submit-form{
+    grid-area: submit-form;  
+}
+
+
+header{
+    grid-area: header;
+}
+
+div{
+    grid-area: div;
+}
+
+.main{
+    grid-area: main;
+}
+
+header{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:"img img img img h1 h1";
+    background-color:skyblue;
+    height: 100px;
+    width: 750px;
+}
+img{
+    height: 100px;   
+}
+
+img{
+    grid-area: img;
+}
+
+h1{
+    grid-area: h1;
+}
+div{
+    grid-area: div;
+}
+
+.class{
+    float: left;
+}
