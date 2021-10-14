@@ -5,7 +5,8 @@ body{
     grid-template-areas:
     "header header header header header header"
     "div . . . . ."
-    ". . form form . ."
+    ". form form form . ."
+    ". ul ul ul . ."
     "main main main main main main"
     ;
     background-color: lavender;
@@ -20,18 +21,26 @@ body{
 form{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "input-form input-form submit-form submit-form";
+    grid-template-areas: 
+    "display-info display-info display-info display-info"
+    "input-form input-form submit-form submit-form"
+    ;
     grid-area: form;
     display: inline-block;
 }
 #input-form{
     grid-area: input-form;
 }
+#ulMovie{
+    grid-area: ul;
+}
 
 #submit-form{
     grid-area: submit-form;  
 }
-
+#display-info{
+    grid-area: display-info;
+}
 
 header{
     grid-area: header;
