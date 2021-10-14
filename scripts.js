@@ -1,8 +1,6 @@
 fetch("https://ghibliapi.herokuapp.com/films")
   .then((response) => response.json())
   .then((movies) => {
-    //  console.log(movies);
-
     const dropDown = document.querySelector("#pick-movie");
     movies.forEach((movie) => {
       const option = document.createElement("option");
@@ -37,16 +35,16 @@ fetch("https://ghibliapi.herokuapp.com/films")
     let newMovie;
     input.addEventListener("input", (event) => {
       event.preventDefault();
-        newMovie = document.createElement("li");
-        newMovie.textContent = `${selectedMovie.title}: ${input.value} `;
-      
+      newMovie = document.createElement("li");
+      newMovie.innerHTML = `<strong> ${selectedMovie.title}:</strong> ${input.value} `;
+    //   document.querySelector("li").setAttribute("style", "font-weight: bold");
+    
+    // event.target.reset();
     });
-
+    
     addButton.addEventListener("click", (event) => {
       event.preventDefault();
-
-      //if(!document.querySelector('ul').textContent.includes(input.value)){
       movieUl.prepend(newMovie);
-      //}
     });
+
   });
