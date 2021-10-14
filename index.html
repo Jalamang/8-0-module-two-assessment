@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Studio Ghibli Review App</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="scripts.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Ghibli Review App</h1>
+      <h1>Ghibli Review App</h1>
       <img src="./images/ghibli-logo.png" alt="" srcset="" />
     </header>
 
     <div class="class">
-        <select name="" id="pick-movie">
-          <option value="default">Castle in the Air</option>
-        </select>
+      <select name="" id="pick-movie"></select>
     </div>
-   
-        <form class="event">
-            <section id="display-info">
-                <h3 id="title"></h3>
-                <p id="year-release"></p>
-                <p id="description"></p>
 
-            </section>
+    <form class="event">
+      <section id="display-info">
+        <h3 id="title"></h3>
+        <p id="year-release"></p>
+        <p id="description"></p>
+      </section>
 
-
-            <section id="review-movie">
-              <label for="location"> Your Review </label>
-              <input id = "input-form" type="text" name="review" required/>
-              <!-- <input id="submit-form" type="text" value="Submit Review"/> -->
-              <input id = "submit-form" type="submit" value="Submit Review" />
-            </section>
-            
-          
-          </form>
-          <ul id="ulMovie" >
-
-          </ul>
-    
-</body>
+      <section id="review-movie">
+        <label for="location"> Your Review </label>
+        <input id="input-form" type="text" name="review" required />
+        <input id="submit-form" type="submit" value="Submit Review" />
+      </section>
+    </form>
+    <ul id="ulMovie"></ul>
+  </body>
 </html>

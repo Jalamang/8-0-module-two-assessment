@@ -17,7 +17,9 @@ body{
     /* font-family: monospace; */
 }
 
-
+li{
+    font-weight: bold;  
+}
 form{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
