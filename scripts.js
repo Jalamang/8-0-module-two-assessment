@@ -1,7 +1,7 @@
 fetch("https://ghibliapi.herokuapp.com/films")
   .then((response) => response.json())
   .then((movies) => {
-     console.log(movies);
+    //  console.log(movies);
 
    
     const dropDown = document.querySelector("#pick-movie");
@@ -24,7 +24,7 @@ dropDown.addEventListener("change", (/*even*/) => {
   movies.forEach((movie) => {
     if (dropDown.value === movie.title) {
            selectedMovie =  movie
-          console.log(movies)
+        //   console.log(movies)
       movieTitle.textContent = movie.title;
       yearRelease.textContent = movie.release_date;
       description.textContent = movie.description;
@@ -33,41 +33,33 @@ dropDown.addEventListener("change", (/*even*/) => {
   });
 })
 
-const membersUl = document.querySelector("#ulMovie");
+const movieUl = document.querySelector("#ulMovie");
 const addButton = document.querySelector("#submit-form");
 const input = document.querySelector("#input-form")
-console.log(input.value)
 
-const teamMember = () => {
+let newMovie;
+input.addEventListener('input', (event)=>{
+
+    event.preventDefault()
     movies.forEach((movie) => {  
-        let newMovie = document.createElement("li");
-        console.log(document.querySelector("#input-form"))
-        newMovie.textContent = `${movie.title}; ${input.value} ` 
-       
-      });
-//     if(!document.querySelector('ul').textContent.includes(newMovie.textContent)){
- membersUl.prepend(newMovie);
-// }
+     console.log(movies)
 
-addButton.addEventListener("click", teamMember);
-
-}
-
-// document.querySelector('#save-button').addEventListener('click',() =>{
-//     // if(textArea.textContent.length == 0){
-//     //   alert('You must enter')
-//     // }
-//     const CharacterName = document.createElement('li')
-//     CharacterName.textContent = textArea.value
-//     console.log(CharacterName.textContent +"<><><>")
-//     CharacterName.style.color = colorSelection.value
-//     CharacterName.fontFamily =  fontSelection.value
-//       if(!document.querySelector('#saved-list').textContent.includes(CharacterName.textContent)){
-//       document.querySelector('#saveText').append(CharacterName)
-//       }
-//   })
-
-
+     newMovie = document.createElement("li");
+     newMovie.textContent = `<strong> ${movie.title}: ${input.value} </strong>`
+     const li = document.querySelector('li') 
+     li.setAttribute('style', 'font-weight:bold');
+   }); 
+   
+    })
+    
+    addButton.addEventListener("click", (event)=>{
+        event.preventDefault()
+     
+        if(!document.querySelector('ul').textContent.includes(input.value)){
+            movieUl.prepend(newMovie); 
+            }   
+            event.target.reset();
+     });  
 
 
   })
