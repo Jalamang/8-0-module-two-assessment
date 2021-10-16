@@ -1,84 +1,73 @@
-body{
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas:
+body {
+  justify-content: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
     "header header header header header header"
     "div . . . . ."
+    ". section section section . ."
     ". form form form . ."
-    ". ul ul ul . ."
-    "main main main main main main"
-    ;
-    background-color: lavender;
-    text-align: center;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 1000px;
-    /* font-family: monospace; */
+    ". ul ul ul . .";
+  background-color: lavender;
+  margin-left: 17.5%;
+  margin-right: 10%;
+  width: 1000px;
+  font-family: monospace;
 }
 
-/* li{
-    font-weight: bold;  
-} */
-form{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: 
-    "display-info display-info display-info display-info"
-    "input-form input-form submit-form submit-form"
-    ;
-    grid-area: form;
-    display: inline-block;
+/* header */
+header {
+  grid-area: header;
 }
-#input-form{
-    grid-area: input-form;
+/* option/dropdown*/
+div {
+  grid-area: div;
 }
-#ulMovie{
-    grid-area: ul;
+section {
+  text-align: center;
+  grid-area: section;
 }
-
-#submit-form{
-    grid-area: submit-form;  
+/* form */
+form {
+  grid-area: form;
 }
-#display-info{
-    grid-area: display-info;
+/* ul */
+ul {
+  grid-area: ul;
 }
 
-header{
-    grid-area: header;
+header {
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: "img img . h1 h1 h1 .";
+  background-color: skyblue;
+  height: 100px;
+  width: 750px;
 }
 
-div{
-    grid-area: div;
+img {
+  grid-area: img;
+  height: 100px;
 }
 
-.main{
-    grid-area: main;
+h1 {
+  grid-area: h1;
 }
 
-header{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas:"img img img img h1 h1";
-    background-color:skyblue;
-    height: 100px;
-    width: 750px;
-}
-img{
-    height: 100px;   
+form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "input-form input-form submit-form submit-form";
+  grid-area: form;
+  display: inline-block;
+  text-align: center;
 }
 
-img{
-    grid-area: img;
+#input-form {
+  grid-area: input-form;
 }
-
-h1{
-    grid-area: h1;
-}
-div{
-    grid-area: div;
-}
-
-.class{
-    float: left;
+#submit-form {
+  grid-area: submit-form;
 }

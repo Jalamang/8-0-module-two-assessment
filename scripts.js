@@ -29,22 +29,22 @@ fetch("https://ghibliapi.herokuapp.com/films")
     });
 
     const movieUl = document.querySelector("#ulMovie");
-    const addButton = document.querySelector("#submit-form");
-    const input = document.querySelector("#input-form");
+    // const addButton = document.querySelector("#submit-form");
+    const reviewForm = document.querySelector("form");
 
-    let newMovie;
-    input.addEventListener("input", (event) => {
-      event.preventDefault();
-      newMovie = document.createElement("li");
-      newMovie.innerHTML = `<strong> ${selectedMovie.title}:</strong> ${input.value} `;
-    //   document.querySelector("li").setAttribute("style", "font-weight: bold");
+    // let newMovie;
+    // input.addEventListener("input", (event) => {
+    //   event.preventDefault();
+    //   //   document.querySelector("li").setAttribute("style", "font-weight: bold");
+      
+    // });
     
-    // event.target.reset();
+    reviewForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        newMovie = document.createElement("li");
+        newMovie.innerHTML = `<strong>${selectedMovie.title}:</strong> ${event.target.review.value}`;
+        movieUl.prepend(newMovie);
+        event.target.reset();
     });
     
-    addButton.addEventListener("click", (event) => {
-      event.preventDefault();
-      movieUl.prepend(newMovie);
-    });
-
   });
